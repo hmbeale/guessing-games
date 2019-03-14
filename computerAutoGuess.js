@@ -3,20 +3,23 @@ const stdin = process.stdin;
 const lowBound = 1;
 const highBound = 500;
 
-console.log (`please input a number from ${lowBound} through ${highBound}`);
+console.log (`please input an integer from ${lowBound} through ${highBound}`);
 
 
 
 const multiGuess = (secretNumber) => {
-  let lowGuess = 0;
-  let highGuess = 501;
+  let lowGuess = lowBound -1;
+  let highGuess = highBound + 1;
   let guess = 0;
+  let counter = 0;
 
   const computerGuess = (numberToGuess) => {
     guess = (Math.round((lowGuess + highGuess)/2));
     console.log(`is your number ${guess}?`);
+    counter++;
     if (guess == numberToGuess){
       console.log('woo I got it');
+      console.log (`it took me ${counter} tries`);
       process.exit();
     }
     else {
@@ -32,7 +35,6 @@ const multiGuess = (secretNumber) => {
   }
 
 }
-
 stdin.addListener("data", function(d) {
     if (d>highBound){
       console.log('that is more than 500');
