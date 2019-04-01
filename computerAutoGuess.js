@@ -5,8 +5,6 @@ const highBound = 500;
 
 console.log (`please input an integer from ${lowBound} through ${highBound}`);
 
-
-
 const multiGuess = (secretNumber) => {
   let lowGuess = lowBound -1;
   let highGuess = highBound + 1;

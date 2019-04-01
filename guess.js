@@ -1,5 +1,7 @@
 const stdin = process.stdin;
-let secretNumber = getRandomIntInclusive(1,500);
+const min = 1;
+const max = getRandomIntInclusive(min, (min + 299));
+let secretNumber = getRandomIntInclusive(min,max);
 
 function getRandomIntInclusive(min, max) {
   min = Math.ceil(min);
@@ -22,4 +24,4 @@ stdin.addListener("data", function(d) {
   });
 
 
-console.log('pick a number from one to five hundred');
+console.log(`pick a number from ${min} to ${max}`);
